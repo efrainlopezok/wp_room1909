@@ -1,0 +1,218 @@
+/* Forms */
+
+
+// Login
+#mc4wp-form-1
+    width: 100%
+    display: flex
+    justify-content: flex-end
+    @media (max-width: 1150px)
+        justify-content: center
+    p
+        margin: 0
+    .mc4wp-form-fields
+        width: 480px
+        display: flex
+        @media (max-width: 560px)
+            flex-direction: column
+        input::placeholder
+            color: rgba(gray, .5)
+        .room-newsletter-email
+            width: 80%
+            @media (max-width: 560px)
+                width: 100%
+                margin-bottom: 20px
+            input[type="email"]
+                padding: 15px 20px
+                background: white
+                border: 1px solid #dddddd
+                font-size: 16px
+                text-transform: uppercase
+                @media (max-width: 560px)
+                    border-radius: 4px
+        .room-newsletter-submit
+            position: relative
+            input[type="submit"]
+                min-width: 125px
+                padding: 14px 0 14px 20px
+                font-size: 16px !important
+                text-transform: uppercase !important
+                text-align: left
+                border-radius: 0 4px 4px 0
+                border: 2px solid #0b322b
+                background-color: #0b322b
+                transition: all .5s
+                @media (max-width: 560px)
+                    border-radius: 4px
+                &:hover
+                    color: #0b322b !important
+                    background-color: white !important
+            &::before
+                content: '\f105'
+                font-family: 'fontawesome'
+                position: absolute
+                top: 50%
+                right: 20px
+                transform: translateY(-56%)
+                font-size: 28px
+                color: white
+
+//-------------------------------------------------------
+
+#theme-my-login, #theme-my-login1
+    form
+        width: 430px
+        margin: 0
+        padding: 0
+        p
+            margin: 0
+            padding: 0
+        input
+            height: auto
+        .tml-user-login-wrap, .tml-user-pass-wrap
+            label
+                margin: 0
+                padding: 20px 0
+                font-size: 16px
+                text-transform: capitalize
+                color: $colgroup-1
+            input
+                padding: 16px
+                font-size: 17px
+                text-transform: uppercase
+                border: 2px solid #cccccc
+                color: $colgroup-1
+                background-color: white
+                &:focus
+                    border: 2px solid $colgroup-1
+        .tml-user-pass-wrap input
+            margin-bottom: 20px !important
+        .tml-rememberme-submit-wrap
+            display: flex
+            align-items: center
+            .tml-rememberme-wrap
+                position: relative
+                order: 2
+                margin-left: 30px
+                padding-left: 20px
+                input
+                    position: absolute
+                    top: 50%
+                    left: 0
+                    transform: translateY(-50%)
+                    height: 10px
+                label
+                    font-size: 16px
+                    text-transform: capitalize
+                    color: $colgroup-1
+            .tml-submit-wrap
+                order: 1
+                input
+                    min-width: 200px
+                    padding: 14.5px 
+                    display: inline-block
+                    font-size: 17px !important
+                    font-weight: bold
+                    text-transform: uppercase
+                    border-radius: 5px
+                    border: 2px solid $colgroup-1
+                    background-color: $colgroup-1
+                    transition: all .5s ease
+                    &:hover
+                        background-color: white !important
+                        color: $colgroup-1 !important
+    .tml-action-links
+        width: 430px
+        margin: 20px 0 0 0
+        padding: 0
+        font-size: 16px
+
+
+
+
+//-------------------------------------------------------
+
+.gform_wrapper
+    margin: 0
+    padding-top: 14px
+    padding-bottom: 14px
+    @media (max-width: 767px)
+        padding-top: 0
+        padding-bottom: 80px
+
+
+.sendanemail
+    margin: 0 auto 36px auto !important
+    padding: 0 !important
+    display: block
+    li#field_2_14, li#field_2_13, li#field_2_16, li#field_2_17, li#field_2_20, .ginput_container.ginput_container_textarea
+        margin: 0 !important
+    .gfield
+        padding: 0
+    .gfield:nth-of-type(1)
+        padding-right: 10px
+    .gfield:nth-of-type(2)
+        padding-left: 10px
+    .gfield:nth-of-type(3)
+        padding-right: 10px
+    .gfield:nth-of-type(4)
+        padding-left: 10px
+    @media (max-width: 640px)
+        .gfield
+            padding: 0 !important
+    input
+        height: 40px !important
+        padding: 27px !important
+        border: 2px solid #ccc
+        background: white
+        color: #0b322b !important
+        text-transform: uppercase
+        &:focus
+            border: 2px solid #0b322b
+            background: white
+            text-transform: uppercase
+    input::placeholder
+        color: rgba(gray,.5)
+    textarea::placeholder
+        color: rgba(gray,.5)
+    select::placeholder
+        color: rgba(gray,.5)
+    textarea
+        padding: 27px !important
+        border: 2px solid #ccc
+        background: white
+        text-transform: uppercase
+        &:focus
+            border: 2px solid #0b322b
+            background: white
+            text-transform: uppercase
+    select
+        height: 58px
+        display: block
+        padding-left: 27px !important
+        border: 2px solid #ccc
+        background: white
+        text-transform: uppercase
+        color: $colgroup-1
+        &:focus
+            border: 2px solid #0b322b
+            background: white
+            text-transform: uppercase
+    .gform_footer input[type="submit"]
+        height: auto !important
+        width: 100% !important
+        max-width: 200px !important
+        margin: 6px 0 0 0 !important
+        display: inline-block !important
+        font-size: 17px !important
+        font-weight: bold !important
+        padding: 14.5px 20px !important
+        text-transform: uppercase !important
+        border-radius: 5px !important
+        transition: all .5s ease !important
+        border: 2px solid $colgroup-1 !important
+        color: white !important
+        background: $colgroup-1 !important
+        &:hover
+            background: white !important
+            color: $colgroup-1 !important

@@ -1,0 +1,203 @@
+/*
+Theme Name: Room 1909
+Theme URI: http://room.com/
+Description: Room Theme
+Author: SmartinCode
+Author URI: http: //www.smartincode.com/
+Template: mrtailor
+Version: 1.0
+*/
+
+@import url("../mrtailor/style.css");
+
+.sendanemail ::-webkit-input-placeholder {
+  color: #0b322b !important;
+}
+.sendanemail ::-moz-placeholder { 
+  color: #0b322b !important;
+}
+.sendanemail :-ms-input-placeholder { 
+  color: #0b322b !important;
+}
+.sendanemail :-moz-placeholder {
+  color: #0b322b !important;
+}
+
+.sendanemail input:focus::-webkit-input-placeholder {
+  color: #000 !important;
+}
+.sendanemail input:focus::-moz-placeholder { 
+  color: #000 !important;
+}
+.sendanemail input:focus:-ms-input-placeholder { 
+  color: #000 !important;
+}
+.sendanemail input:-moz-placeholder {
+  color: #000 !important;
+}
+.sendanemail input:focus {
+	color: black;
+}
+
+/*Custom Cart*/
+.cart-subtitle {
+    color: #0b322b;
+    font-weight: bold;
+    font-size: 22px;
+    text-transform: uppercase;
+     margin-bottom: 35px;
+}
+.woocommerce-cart header .large-8 {
+    width: 100%;
+}
+.woocommerce-cart .entry-title {
+    color: #0b322b;
+    font-size: 18px;
+    font-weight: bold;
+    text-transform: uppercase;
+    text-align: left;
+    line-height: 25px;
+}
+.woocommerce-cart .shop_table {
+    margin-top: 0 !important;
+}
+.woocommerce-cart .entry-content .woocommerce form thead {
+    display: table-header-group;
+}
+
+.woocommerce-cart thead {
+    background-color: #0b322b;
+}
+.woocommerce-cart thead tr th {
+    color: white !important;
+    font-weight: bold !important;
+    font-size: 16px !important;
+    text-transform: capitalize;
+}
+.woocommerce-page table.cart .product-thumbnail img, 
+.woocommerce-page #content table.cart .product-thumbnail img{
+	width: 100%;
+}
+
+.shop_table .product-remove {
+    width: 5%;
+    vertical-align: top !important;
+}
+.shop_table .product-thumbnail {
+    width: 18% !important;
+    vertical-align: top;
+}
+.shop_table .product-name {
+    width: 47% !important;
+    vertical-align: top;
+}
+.shop_table .product-price {
+    width: 10%;
+    vertical-align: top !important;
+}
+.shop_table .product-quantity {
+    width: 10%;
+    vertical-align: top !important;
+}
+.shop_table .product-subtotal {
+    width: 10%;
+    vertical-align: top !important;
+}
+
+.product-remove .remove {
+    margin: 0 auto;
+    font-size: 20px !important;
+    border: 1px solid black !important;
+    line-height: 20px !important;
+    height: auto !important;
+}
+
+.shop_table td.product-name a {
+    font-size: 18px;
+    text-transform: uppercase;
+    color: #0b322b;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+.shop_table .product-name dt,
+.shop_table .product-name dd p {
+    font-size: 14px !important;
+    font-weight: bold;
+    /*text-transform: uppercase;*/
+}
+td.product-name dl.variation {
+    column-count: 2;
+}
+.variation-Total {
+    display: none !important;
+}
+.shop_table .woocommerce-Price-amount {
+    font-size: 20px;
+    font-weight: 500;
+}
+.woocommerce-cart.woocommerce-page #content .quantity input.qty {
+    background: #0b332c;
+    width: 35px !important;
+    padding: 0;
+    text-align: center !important;
+    font-size: 20px;
+    height: 30px !important;
+    color: white;
+}
+.woocommerce table.cart td.actions .input-text, .woocommerce-page #content table.cart td.actions .input-text, .woocommerce-page table.cart td.actions .input-text {
+    width: 55%;
+    min-width: 0px;
+    margin-right: 5%;
+    height: auto;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    line-height: 23px;
+    font-weight: bold;
+}
+.shop_table .coupon input[name="apply_coupon"] {
+    width: 40%;
+    min-width: 0px;
+}
+.shop_table td.product-name .edit-customization,
+.shop_table td.product-name .duplicate-customization {
+    display: inline-block !important;
+    font-size: 13px;
+    font-weight: bold;
+    margin-right: 20px;
+    margin-top: 5px;
+}
+.shop_table td.product-name .edit-customization:before, 
+.shop_table td.product-name .duplicate-customization:before {
+    content: "\f105";
+    font-family: FontAwesome;
+    padding-right: 5px;
+    font-size: 20px;
+    position: relative;
+    top: 2px;
+}
+.woocommerce table.shop_table tbody tr:nth-child(2) td {
+    border-top: 2px solid #0b332c;
+    color: #0b322b;
+    font-size: 16px;
+    font-weight: bold;
+    text-align: right;
+}
+.woocommerce-cart .shop_table .actions a, 
+.woocommerce-page #content .actions .coupon input.button {
+    background: #0b332c;
+    color: white !important;
+    display: inline-block;
+    padding: 10px 20px !important;
+    border-radius: 5px;
+    text-transform: uppercase;
+    line-height: 20px !important;
+    font-size: 16px !important;
+}
+.woocommerce-cart .shop_table .actions p {
+    text-transform: lowercase;
+    display: inline-block;
+    padding: 0 5px;
+}
+.woocommerce table.shop_table.cart td.actions, .woocommerce-page table.shop_table.cart td.actions {
+    padding: 0px 0 0 0;
+}

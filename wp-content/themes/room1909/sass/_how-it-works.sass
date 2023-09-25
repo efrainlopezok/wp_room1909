@@ -1,0 +1,256 @@
+.cd-horizontal-timeline
+  opacity: 0
+  margin: 2em auto
+  transition: opacity 0.2s
+  &::before
+    content: 'mobile'
+    display: none
+  &.loaded
+    opacity: 1
+  .timeline
+    position: relative
+    height: 100px
+    width: 90%
+    max-width: 800px
+    margin: 0 auto
+  .events-wrapper
+    position: relative
+    height: 100%
+    margin: 0 40px
+    overflow: hidden
+    &::after
+      content: ''
+      position: absolute
+      z-index: 2
+      top: 0
+      height: 100%
+      width: 20px
+    &::before
+      content: ''
+      position: absolute
+      z-index: 2
+      top: 0
+      height: 100%
+      width: 20px
+      left: 0
+    &::after
+      right: 0
+  .events
+    position: absolute
+    z-index: 1
+    left: 0
+    top: 49px
+    height: 2px
+    background: #dfdfdf
+    transition: transform 0.4s
+  .filling-line
+    position: absolute
+    z-index: 1
+    left: 0
+    top: 0
+    height: 100%
+    width: 100%
+    background-color: #7b9d6f
+    transform: scaleX(0)
+    transform-origin: left center
+  .events a
+    position: absolute
+    bottom: 0
+    z-index: 2
+    text-align: center
+    font-size: 1.3rem
+    padding-bottom: 15px
+    color: #383838
+    transform: translateZ(0)
+    &::after
+      content: ''
+      position: absolute
+      left: 50%
+      right: auto
+      transform: translateX(-50%)
+      bottom: -5px
+      height: 12px
+      width: 12px
+      border-radius: 50%
+      border: 2px solid #dfdfdf
+      background-color: #f8f8f8
+      transition: background-color 0.3s, border-color 0.3s
+
+.no-touch .cd-horizontal-timeline .events a:hover::after
+  background-color: #7b9d6f
+  border-color: #7b9d6f
+
+.cd-horizontal-timeline .events a
+  &.selected
+    pointer-events: none
+    &::after
+      background-color: #7b9d6f
+      border-color: #7b9d6f
+  &.older-event::after
+    border-color: #7b9d6f
+
+@media only screen and (min-width: 1100px)
+  .cd-horizontal-timeline
+    margin: 6em auto
+    &::before
+      content: 'desktop'
+
+.cd-timeline-navigation a
+  position: absolute
+  z-index: 1
+  top: 50%
+  bottom: auto
+  transform: translateY(-50%)
+  height: 34px
+  width: 34px
+  border-radius: 50%
+  border: 2px solid #dfdfdf
+  overflow: hidden
+  color: transparent
+  text-indent: 100%
+  white-space: nowrap
+  transition: border-color 0.3s
+  &::after
+    content: ''
+    position: absolute
+    height: 16px
+    width: 16px
+    left: 50%
+    top: 50%
+    bottom: auto
+    right: auto
+    transform: translateX(-50%) translateY(-50%)
+    background: url(../img/cd-arrow.svg) no-repeat 0 0
+  &.prev
+    left: 0
+    transform: translateY(-50%) rotate(180deg)
+  &.next
+    right: 0
+
+.no-touch .cd-timeline-navigation a:hover
+  border-color: #7b9d6f
+
+.cd-timeline-navigation a.inactive
+  cursor: not-allowed
+  &::after
+    background-position: 0 -16px
+
+.no-touch .cd-timeline-navigation a.inactive:hover
+  border-color: #dfdfdf
+
+.cd-horizontal-timeline .events-content
+  position: relative
+  width: 100%
+  margin: 2em 0
+  overflow: hidden
+  transition: height 0.4s
+  li
+    position: absolute
+    z-index: 1
+    width: 100%
+    left: 0
+    top: 0
+    transform: translateX(-100%)
+    padding: 0 5%
+    opacity: 0
+    animation-duration: 0.4s
+    animation-timing-function: ease-in-out
+    &.selected
+      position: relative
+      z-index: 2
+      opacity: 1
+      transform: translateX(0)
+    &.enter-right, &.leave-right
+      animation-name: cd-enter-right
+    &.enter-left, &.leave-left
+      animation-name: cd-enter-left
+    &.leave-right, &.leave-left
+      animation-direction: reverse
+    > *
+      max-width: 800px
+      margin: 0 auto
+  h2
+    font-weight: bold
+    font-size: 2.6rem
+    font-family: "Playfair Display", serif
+    font-weight: 700
+    line-height: 1.2
+  em
+    display: block
+    font-style: italic
+    margin: 10px auto
+    &::before
+      content: '- '
+  p
+    font-size: 1.4rem
+    color: #959595
+  em, p
+    line-height: 1.6
+
+@media only screen and (min-width: 768px)
+  .cd-horizontal-timeline .events-content
+    h2
+      font-size: 7rem
+    em
+      font-size: 2rem
+    p
+      font-size: 1.8rem
+
+@-webkit-keyframes cd-enter-right
+  0%
+    opacity: 0
+    -webkit-transform: translateX(100%)
+
+  100%
+    opacity: 1
+    -webkit-transform: translateX(0%)
+
+
+@-moz-keyframes cd-enter-right
+  0%
+    opacity: 0
+    -moz-transform: translateX(100%)
+
+  100%
+    opacity: 1
+    -moz-transform: translateX(0%)
+
+
+@keyframes cd-enter-right
+  0%
+    opacity: 0
+    transform: translateX(100%)
+
+  100%
+    opacity: 1
+    transform: translateX(0%)
+
+
+@-webkit-keyframes cd-enter-left
+  0%
+    opacity: 0
+    transform: translateX(-100%)
+
+  100%
+    opacity: 1
+    transform: translateX(0%)
+
+
+@-moz-keyframes cd-enter-left
+  0%
+    opacity: 0
+    transform: translateX(-100%)
+
+  100%
+    opacity: 1
+    transform: translateX(0%)
+
+
+@keyframes cd-enter-left
+  0%
+    opacity: 0
+    transform: translateX(-100%)
+
+  100%
+    opacity: 1
+    transform: translateX(0%)

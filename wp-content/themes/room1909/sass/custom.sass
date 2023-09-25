@@ -1,0 +1,1476 @@
+// -------------------- Variables --------------------
+
+$colgroup-1: #0b322b
+
+@import "general"
+@import "home"
+@import "buttons"
+@import "forms"
+@import "single-product"
+@import "woo-category"
+@import "how-it-works"
+@import "faqs"
+
+.flex
+    display: flex
+
+
+input[type="text"], input[type="password"], input[type="date"], input[type="datetime"], input[type="datetime-local"], input[type="month"], input[type="week"], input[type="email"], input[type="number"], input[type="search"], input[type="tel"], input[type="time"], input[type="url"], textarea
+    height: auto
+
+
+/* -------------------- Typography --------------------
+
+h3.widget-title
+    margin-bottom: 2px
+    font-size: 17px !important
+    color: black !important
+
+body p
+    line-height: 1.2em !important
+    margin-bottom: 25px
+
+body h2
+    line-height: 1em
+    margin-bottom:  25px
+    padding: 0
+
+.bold-green *
+    color: $colgroup-1 !important
+    h2
+        color: black !important
+
+/* -------------------- All --------------------
+.shopping_bag_items_number
+    background-color: $colgroup-1 !important
+    color: white!important
+    border-color: $colgroup-1 !important
+
+
+.columns
+    padding: 0
+
+.row
+    width: 95%
+    max-width: 1120px
+    margin: 0 auto
+    padding: 0
+
+.room-aling-left
+  text-align: left
+
+.room-align-right
+  text-align: right
+
+
+/* -------------------- vs_custom --------------------
+
+.vc_custom_1503667562644
+    border-top: 3px solid $colgroup-1
+
+.vc_custom_1503359787517
+    background: url(../images/about-top-divider.png) 0 0 no-repeat
+    background-position: 15px 100%
+    background-size: calc(100% - 30px) 3px
+    margin-bottom: 15px !important
+    .wpb_content_element
+        position: relative
+
+.vc_custom_1503359971013
+    background-size: auto 100%
+    height: 562px
+
+/* -------------------- Menu --------------------
+
+.tagline
+    height: 44px
+    padding: 11px 0
+    font-size: 18px
+    font-weight: bold
+    background-color: #f5f5f6
+
+#site-top-bar
+  .large-5.columns
+    float: none
+    position: absolute
+    left: 50%
+    transform: translateX(-50%)
+    text-align: center
+  .site-top-message, .topbar-phone
+    font-weight: bold
+    font-size: 15px
+  .site-top-message
+    text-transform: uppercase
+
+
+
+
+
+.mobile-menu-button
+    height: 40px !important
+    width: 40px !important
+    display: flex !important
+    justify-content: center
+    align-items: center
+    border: 2px solid #eee
+    border-radius: 5px
+    @media (min-width: 1024px)
+        display: none !important
+    a
+        padding: 0 !important
+        margin: 0 !important
+
+.site-header
+    padding-bottom: 0 !important
+
+.top-headers-wrapper .site-social-icons-wrapper
+    padding-right: 50px
+
+
+
+/* -------------------- Home --------------------
+
+.home-box
+    position: relative
+    display: block
+    height: auto
+    padding: 0 10px !important
+    >.vc_column_container
+        margin: 40px 0 80px 0
+        padding: 0
+        @media (max-width: 1000px)
+            margin: 40px 0 0 0
+        @media (max-width: 768px)
+            margin: 0
+        >.vc_column-inner
+            margin: 0
+            padding: 0 0
+            >.wpb_wrapper
+                display: flex
+                flex-wrap: wrap
+                align-items: stretch
+                padding: 0 5px
+                >.wpb_content_element
+                    position: relative !important
+                    margin-bottom: 0
+                >.box-300
+                    order: 1
+                    height: 330px
+                    width: 100%
+                    margin-bottom: 10px
+                >.box-301
+                    order: 2
+                    height: 200px
+                    width: 100%
+                >.box-302
+                    order: 3
+                    height: 540px
+                    width: 100%
+                    &::after
+                        content: ''
+                        display: block
+                        position: absolute
+                        top: -20px
+                        left:  50%
+                        transform: translateX(-50%)
+                        height: 2px
+                        width: 1000px
+                        background: #eee
+                    &::before
+                        content: ''
+                        display: block
+                        position: absolute
+                        bottom: -40px
+                        left:  50%
+                        transform: translateX(-50%)
+                        height: 3px
+                        width: 1100px
+                        min-width: 280px
+                        background: #0b322b
+                        z-index: 2
+                >.box-303
+                    order: 4
+                    height: 330px
+                    width: 100%
+                    margin-bottom: 10px
+                >.box-304
+                    order: 5
+                    height: 200px
+                    width: 100%
+                @media (max-width: 767px)
+                    >.box-300
+                        height: 170px
+                        width: 100%
+                        margin-top: 40px
+                        margin-bottom: 0
+                        &::after
+                            content: ''
+                            display: block
+                            position: absolute
+                            top: -20px
+                            left:  50%
+                            transform: translateX(-50%)
+                            height: 2px
+                            width: 1000px
+                            background: #eee
+                    >.box-301
+                        order: 2
+                        height: 170px
+                        width: 100%
+                    >.box-302
+                        order: 3
+                        height: 170px
+                        width: 100%
+                        &::before
+                            display: none
+                        &::after
+                            display: none
+                    >.box-303
+                        height: 170px
+                        margin-bottom: 0
+                    >.box-304
+                        height: 170px
+                        width: 100%
+                        margin-bottom: 80px
+                        &::before
+                            content: ''
+                            display: block
+                            position: absolute
+                            bottom: -40px
+                            left:  50%
+                            transform: translateX(-50%)
+                            height: 2px
+                            width: 1180px
+                            min-width: 280px
+                            background: black
+                            z-index: 2
+
+.box-400
+    position: relative
+    min-height: 400px
+
+
+/* -------------------- Buttons --------------------
+
+.btn-new-white
+    position: absolute
+    left: 50%
+    bottom: 50px
+    transform: translateX(-50%)
+    min-width: 200px
+    padding: 14.5px 20px
+    display: inline-block
+    font-size: 17px
+    font-weight: bold
+    text-transform: uppercase
+    text-align: center
+    border: 2px solid white
+    color: white
+    transition: all .5s ease
+    i
+        font-size: 14px
+        margin-left: 10px
+    &:hover, &:focus
+        color: black
+        background: white
+
+.btn-new-green
+    position: absolute
+    left: 50%
+    bottom: 50px
+    transform: translateX(-50%)
+    min-width: 200px
+    padding: 14.5px 20px
+    display: inline-block
+    font-size: 17px
+    font-weight: bold
+    text-transform: uppercase
+    text-align: center
+    border: 2px solid $colgroup-1
+    color: $colgroup-1
+    i
+        font-size: 13px
+        margin-left: 10px
+    &:hover, &:focus
+        color: $colgroup-1
+
+.btn-new-black
+    border: 2px solid black
+    display: inline-block
+    font-size: 17px
+    font-weight: bold
+    margin: 0
+    left: 50%
+    min-width: 200px
+    padding: 14.5px 20px
+    position: relative
+    text-align: center
+    text-transform: uppercase
+    transform: translateX(-50%)
+    transition: all .5s ease
+    i
+        font-size: 13px
+        margin-left: 10px
+    &:hover, &:focus
+        color: white
+        background: black
+
+.home #site-navigation > ul li:nth-child(5) a
+  font-size: 16.9px
+  font-weight: bold
+
+
+
+.home
+  .tagline p
+    font-size: 18px
+    font-weight: bold
+    margin-bottom: 0px
+  .main-slider a.slider_button
+    border: 2px solid #fff
+    background: transparent
+    color: #fff
+    font-size: 17px
+    font-weight: bold
+    padding: 9px 34px 8px
+    &:hover
+        background-color: white
+        color: black
+        &:after
+            background-image: url(../images/arrow-r-black.png)
+    &:after
+      background: url(../images/arrow-r.png) 0 0 no-repeat
+      background-size: 100% auto
+      content: " "
+      display: inline-block
+      width: 10px
+      height: 15px
+      margin-left: 10px
+      vertical-align: middle
+      margin-top: -4.5px
+
+/*
+ *Buttons white and black
+
+.button.btn
+  border: 2px solid #000
+  background: transparent
+  color: #000
+  font-size: 17px !important
+  font-weight: bold
+  padding: 11px 19px
+  min-width: 144px
+  &:after
+    background: url(../images/arrow-r-black.png) 0 0 no-repeat
+    background-size: 100% auto
+    content: " "
+    display: inline-block
+    width: 10px
+    height: 15px
+    margin-left: 10px
+    vertical-align: middle
+    margin-top: -4.5px
+    text-transform: uppercase
+    transition: color 0.3s, background 0.3s
+    -webkit-transition: color 0.3s, background 0.3s
+  &.btn-center
+    position: relative
+    left: 50%
+    transform: translateX(-50%)
+  &.btn-white
+    border: 2px solid #fff
+    color: #fff
+    &:after
+      background: url(../images/arrow-r.png) 0 0 no-repeat
+
+/* Center boxes with image
+
+
+
+
+
+
+
+/* About section
+
+h3.heading-decoration
+  color: $colgroup-1
+  font-size: 17px
+  margin-bottom: 15px
+  position: relative
+  text-transform: uppercase
+  font-weight: normal !important
+
+.heading-decoration
+  &:before
+    background: url(../images/heading-decorator.png) no-repeat
+    content: " "
+    width: 31px
+    height: 7px
+    position: absolute
+    left: auto
+    margin-left: -50px
+    top: 7px
+  &:after
+    background: url(../images/heading-decorator.png) no-repeat
+    content: " "
+    width: 31px
+    height: 7px
+    position: absolute
+    right: auto
+    top: 6px
+    margin-left: 19px
+    transform: rotate(180deg)
+
+.home .vc_icon_element.vc_icon_element-outer .vc_icon_element-inner .vc_icon_element-icon:before
+  background: url(../images/map-marker.png) no-repeat
+  display: inline-block
+  width: 27px
+  height: 39px
+
+.booking-appointments
+  .vc_icon_element
+    margin-bottom: 0
+  h4
+    color: $colgroup-1
+    font-size: 17px
+    margin-bottom: 10px
+
+
+
+
+
+/* Featured Items
+
+.home .vc_separator
+  color: $colgroup-1
+  font-size: 17px
+  margin-bottom: 15px
+  position: relative
+  text-transform: uppercase
+
+/* Footer
+
+#site-footer
+  text-transform: uppercase
+  border-top: 3px solid $colgroup-1
+  height: auto
+  a
+    font-size: 16px
+  .large-6
+    h3
+      font-size: 16px
+      text-transform: uppercase
+    .widget-area > div
+      width: 50%
+      float: left
+      @media (max-width: 500px)
+          width: 100%
+  .last-column .widget-area > div:last-child
+    width: 100%
+    ul
+      width: 100%
+      float: left
+
+.site-footer-copyright-area
+  clear: both
+
+#minicart-offcanvas .widget_shopping_cart .remove
+  font-size: 40px !important
+  border: 1px solid $colgroup-1
+  color: $colgroup-1 !important
+  width: 36px
+  line-height: 13px
+  padding: 10px 8px
+
+.slide-from-right .slide-from-right.st-menu
+  background-color: #fff !important
+
+.st-menu.slide-from-right .widget .amount, #site-footer .widget .total strong, .slide-from-right .widget .total strong
+  color: $colgroup-1 !important
+
+#minicart-offcanvas .widget_shopping_cart .buttons .checkout
+  background: #fff !important
+  color: $colgroup-1 !important
+  border: 1px solid $colgroup-1
+  &:hover
+    background-color: $colgroup-1 !important
+    color: #fff !important
+
+.widget_shopping_cart .buttons .view_cart:hover
+  background-color: $colgroup-1 !important
+  color: #fff !important
+
+.st-menu .offcanvas-right-content .widget
+  a, .widget-title
+    color: $colgroup-1 !important
+    border: 1px solid $colgroup-1
+  a:hover, .widget-title:hover
+    background-color: $colgroup-1 !important
+    color: #fff !important
+
+#minicart-offcanvas .widget .widget_shopping_cart_content .product-name a
+  border: none !important
+  font-weight: bold
+
+#site-footer .widget .quantity, .slide-from-right .widget .quantity
+  color: $colgroup-1 !important
+
+.st-menu .offcanvas-right-content .widget .product-thumbnail a
+  border: none
+
+@media only screen and (min-width: 1200px)
+  .home .main-slider-content .row
+    position: absolute
+    bottom: 66px
+    width: 100%
+
+@media only screen and (max-width: 767px)
+  .no-br br
+    display: none
+
+/* #popup
+ *- - - - - - - - - - - - - - - - - - - - - - - - -
+
+.small-dialog
+  .textwidget p
+    font-size: 15px
+    line-height: 16px
+  .widget-title
+    text-transform: uppercase
+    font-size: 22px
+    color: $colgroup-1
+
+@media only screen and (max-width: 900px)
+  .small-dialog
+    padding: 25px 30px
+    max-width: 700px
+
+@media only screen and (max-width: 600px)
+  .small-dialog
+    padding: 20px
+    max-width: 500px
+
+@media only screen and (max-width: 500px)
+  .small-dialog
+    max-width: 400px
+
+/* #newsletter
+
+#gform_wrapper_1
+    max-width: 480px
+    margin: 0 0 0 auto
+    @media (max-width: 1150px)
+        max-width: 800px
+
+@media (max-width: 1022px)
+    .widget-area
+        display: flex
+        flex-wrap: wrap
+        @media (max-width: 500px)
+            flex-direction: column
+
+.gform_footer.top_label
+    padding: 0
+    margin: 0
+
+.gform_wrapper
+    .newsletter
+        position: relative
+        ul.gform_fields li.gfield
+            padding-right: 0
+            padding: 0 !important
+            margin: 0 !important
+            width: 100% !important
+            max-width: 100% !important
+            border: 0 !important
+            background-color: transparent !important
+        input
+            width: 100%
+            border-radius: 0 8px 8px 0
+            padding-right: 130px !important
+            padding-left: 25px !important
+            height: 50px
+            line-height: 50px
+            background-color: #fff
+        .gform_footer input
+            &.button, &[type=submit]
+                position: absolute
+                top: 0
+                right: 0
+                padding: 0 0 0 22px !important
+                margin-top: 0
+                text-align: left
+                width: 125px
+                font-size: 16px !important
+                font-weight: normal
+                max-width: 125px
+                min-width: 1px !important
+                height: 50px
+                line-height: 50px
+                margin-right: 0
+                border-radius: 0 5px 5px 0
+                background-color: $colgroup-1
+                opacity: 1
+                transition: opacity 0.3s
+            &.button:hover, &[type=submit]:hover
+                opacity: 0.85
+                background-color: $colgroup-1 !important
+        .gfield .gfield_error
+        padding: 0 !important
+        margin: 0 !important
+        width: 100% !important
+        max-width: 100% !important
+        border: 0 !important
+        background-color: transparent !important
+        li
+            &.gfield_error
+            input:not([type=radio]):not([type=checkbox]):not([type=submit]):not([type=button]):not([type=image]):not([type=file]), textarea
+                border: 1px solid #ddd
+            &.gfield.gfield_error.gfield_contains_required div.ginput_container
+                margin: 0 !important
+            
+        li.gfield.gfield_error.gfield_contains_required div.gfield_description
+            max-width: 100%
+            padding-right: 0 !important
+            padding-top: 5px !important
+            padding-left: 0px
+            color: $colgroup-1
+    .validation_error, .gfield_label
+        padding: 0
+        margin: 0
+        display: none !important    
+
+@media only screen and (max-width: 641px)
+  .gform_wrapper .newsletter
+    input
+      width: 100%
+      border-radius: 0
+      padding-right: 15px !important
+      padding-left: 15px !important
+      background-color: #fff
+    .gform_footer input
+      &.button, &[type=submit]
+        position: relative
+        width: 100%
+        max-width: 100%
+        border-radius: 0
+
+/* #
+// Formulario
+
+.gform_wrapper
+    margin: 0
+    padding-top: 14px
+    padding-bottom: 14px
+    @media (max-width: 767px)
+        padding-top: 0
+        padding-bottom: 80px
+
+
+.sendanemail
+    margin: 0 auto !important
+    padding: 0 !important
+    display: block
+    .gfield
+        padding: 0
+    .gfield:nth-of-type(1)
+        padding-right: 10px
+    .gfield:nth-of-type(2)
+        padding-left: 10px
+    .gfield:nth-of-type(3)
+        padding-right: 10px
+    .gfield:nth-of-type(4)
+        padding-left: 10px
+    @media (max-width: 640px)
+        .gfield
+            padding: 0 !important
+    input
+        padding: 27px !important
+        border: 2px solid #ccc
+        background: white
+        color: #0b322b !important
+        text-transform: uppercase
+        &:focus
+            border: 2px solid #0b322b
+            background: white
+            text-transform: uppercase
+    textarea
+        padding: 27px !important
+        border: 2px solid #ccc
+        background: white
+        text-transform: uppercase
+        &:focus
+            border: 2px solid #0b322b
+            background: white
+            text-transform: uppercase
+    select
+        height: 58px
+        display: block
+        padding-left: 27px !important
+        border: 2px solid #ccc
+        background: white
+        text-transform: uppercase
+        &:focus
+            border: 2px solid #0b322b
+            background: white
+            text-transform: uppercase
+    .gform_footer input[type="submit"]
+        width: 100%
+        max-width: 200px
+        margin: 0 0 0 auto
+        padding: 12px 17px !important
+        display: block
+        font-size: 18px !important
+        font-weight: normal
+        text-align: center
+        text-transform: uppercase
+        border-radius: 3px !important
+        border: none
+        color: white !important
+        background: #0b322b
+
+body .gform_wrapper ul li.gfield
+    padding-top: 0
+
+/* -------------------- Media queries --------------------
+
+@media (min-width: 641px)
+    .gform_wrapper ul.gform_fields li.gfield
+        padding-right: 0
+    .gform_wrapper .top_label li.gfield.gf_left_half, .gform_wrapper .top_label li.gfield.gf_right_half
+        padding-right: 0
+
+
+.form-home
+    display: flex
+    align-items: center
+    flex-wrap: wrap
+    @media (max-width: 1150px)
+        flex-direction: column
+        h3
+            text-align: center
+        p
+            text-align: center
+    .newsletter
+        height: 55px
+    h3
+        font-size: 18px !important
+    p
+        font-size: 18px
+
+.form_buttom
+    position: absolute
+    top: 0
+    right: 0
+    &::before
+        content: '\f105'
+        font-size: 26px
+        font-family: 'fontawesome'
+        position: absolute
+        top: 11px
+        right: 22px
+        display: block
+        color: white
+        z-index: 10
+    @media (max-width: 641px)
+        position: relative
+        top: 0
+        &::before
+            right: 30px
+
+/* Code
+
+// General
+
+*
+    list-style: none !important
+
+body h1
+
+body h2
+    font-size: 22px
+    font-weight: bold
+
+body h3
+
+body h4
+
+//____________________
+
+// Nav Menu
+
+
+
+//____________________
+
+.home-appointment
+    margin: 0
+    padding: 0px
+    img
+        margin-bottom: -20px
+
+
+// Media Queries
+
+.woocommerce-Price-amount
+    font-size: 18px
+
+.product_wrapper h3
+    padding-bottom: 0 !important
+
+#products-carousel-2093067953
+    margin-bottom: 0 !important
+
+.owl-theme .owl-controls
+    display: none !important
+
+
+
+    //____________________
+
+
+
+
+
+.buttom-opcional
+    border: 2px solid white
+    color: white
+    display: block
+    font-size: 17px
+    font-weight: bold
+    left: 50%
+    max-width: 200px
+    padding: 11px 19px
+    position: absolute
+    text-transform: uppercase
+    transform: translateX(-50%)
+    &:hover
+        color: white
+
+.site-tools
+    @media (max-width: 1024px)
+        margin: 0
+
+.new-row
+    max-width: 400px
+
+.breadcrumb-right
+    margin: 0 10px
+    font-size: 14px !important
+
+.title-instagram
+    .vc_column-inner
+        padding-top: 17px !important
+    .wpb_content_element
+        margin-bottom: 21px
+
+
+
+
+.room-breadcrumbs
+    margin: 0
+    padding: 18px 0
+    color: black
+    text-transform: uppercase
+    font-weight: bold
+    a:hover
+        color: rgba(black, .5)
+
+.large-4.columns.aling-left.menu-left
+    @media (max-width: 1023px)
+        padding: 0 0 0 0
+        margin: 0 0 10px 0
+        display: flex
+        justify-content: center
+        ul
+            margin: 0
+
+.large-4.columns.site-tools.align-right
+    @media (max-width: 1023px)
+        clear: both
+        margin: 20px auto 0 auto
+        padding: 0
+        display: flex
+        justify-content: center
+
+
+//----------------------------------------------------------------------------
+
+// Estilos Generales
+
+
+
+.column, .columns
+    padding: 0 10px !important
+
+.row, .vc_span12.wpb_column
+    padding: 0
+
+
+
+h2
+    font-size: 22px !important
+    font-weight: bold !important
+    color: black !important
+
+// Footer Principal
+
+.icons-footer
+    p
+        font-size: 15px !important
+        font-weight: bold
+        text-align: center
+        margin-bottom: 0
+        text-transform: uppercase
+    p:nth-of-type(1)
+        margin-bottom: 10px
+
+div#custom_html-2
+    padding-top: 10px
+
+// Otros
+
+ul.products h3, .products ul h3
+    padding: 10px 0
+    text-align: center
+    font-size: 18px
+    font-weight: bold
+
+.product_after_shop_loop_price
+    text-align: center
+
+.product_after_shop_loop_buttons
+    text-align: center
+
+
+@media (min-width: 40.063em)
+    .header-centered .site-tools
+        display: block
+
+.page-contact
+    padding-top: 0
+
+.catalog-page
+    padding-top: 320px !important
+
+.wpb_wrapper h3
+    font-weight: bold
+    text-transform: uppercase
+
+#menu-footer-1, #menu-footer-2
+    padding-left: 0
+    margin: 0
+    list-style: none
+
+.social-footer
+    h3
+        font-weight: bold
+    div:nth-of-type(1)
+        margin: 12px 0
+        a
+            font-size: 25px
+            color: #0b322b
+            margin-right: 10px
+            i
+                font-size: 27px
+    img
+        margin-top: 10px
+
+.menu-footer-3
+    position: relative
+    >ul
+        width: 100%
+        margin: 0
+        @media (max-width: 500px)
+            margin-top: 10px
+        >li
+            list-style: none
+            position: relative
+            display:  inline-block
+            padding-left: 26px
+            width: 49%
+            font-size: 15px
+            &::before
+                content: ''
+                position: absolute
+                top: 3px
+                left: 0
+                height: 20px
+                width: 20px
+                display: block
+                background: url(../images/arrow-copy.png) center no-repeat
+                background-size: cover
+            @media (max-width: 500px)
+                display: block
+                margin-bottom: 10px
+                width: 100%
+                &::before
+                    top: 1px
+
+
+
+.stayconnected
+    display: flex
+    justify-content: space-between
+
+.copyright_text
+    text-align: center
+    font-weight: bold
+    font-size: 15px
+    margin-top: 30px
+
+.copyright_img
+    width: 80px
+    margin: -10px auto 0 auto
+    img
+        width: 100%
+
+// FAQ
+
+
+.faq-container
+    .vc_custom_1505139203674
+        .wpb_wrapper
+            h3
+                font-size: 18px !important
+
+.faq
+    position: static
+    background: #f6f6f6
+    .faq-click
+        position: relative
+        margin-bottom: 5px
+        padding: 10px 0 10px 25px
+        background: #0b322b
+        h3
+            font-size: 16px !important
+            font-weight: normal
+            color: white
+            text-transform: lowercase
+        i
+            position: absolute
+            top: 50%
+            transform: translateY(-50%)
+            right: 25px
+            color: white
+            cursor: pointer
+        @media (max-width: 640px)
+            padding: 4px 25px 4px 12px
+            h3
+                font-size: 14px !important
+            i
+                right: 10px
+                font-size: .8em
+    p
+        margin: 0
+        padding: 25px 38px 30px 38px
+        display: none
+        color: #0b322b
+        background: #f6f6f6
+        @media (max-width: 640px)
+            padding: 10px 15px
+
+//----------------------------------------------------------------------------
+
+
+.content-area
+    padding-top: 0
+
+// Botones
+
+.buttonGreen
+    width: 100%
+    max-width: 200px
+    padding: 11px 17px
+    display: inline-block
+    font-size: 18px
+    font-weight: bold
+    text-align: center
+    text-transform: uppercase
+    border-radius: 3px
+    color: white
+    background: #0b322b
+    &:hover
+        color: white
+
+a.button.btn.btn-white
+    max-width: 90%
+//----------------------------------------------------------------------------
+
+.faq-icon
+    i::before
+        content: '\f077'
+
+// Slider
+.num
+    height: 25px
+    width: 25px
+    margin: 0 auto
+    display: flex
+    justify-content: center
+    align-items: center
+    border-radius: 100%
+    color: white
+    background: #0b322b
+
+.slider-nav-cont
+    display: flex
+    padding-top: 20px
+    margin-bottom: 20px
+    h3
+        max-width: 140px
+        margin: 0 auto 0 auto
+        text-align: center
+        font-size: 18px
+        @media (max-width: 490px)
+            font-size: 14px !important
+
+.slider-for-cont
+    padding-top: 50px
+    img
+        margin: 0 auto
+    .img-slider
+        height: 60px
+    .num
+        height: 32px
+        width: 32px
+    h3
+        text-align: center
+    p
+        max-width: 500px
+        margin: 20px auto 20px auto
+        text-align: center
+        color: #666
+
+.select-form
+    position: relative
+    &:before
+        position: absolute
+        content: '\f0d7'
+        font-family: fontawesome
+        right: 20px
+        top: 50%
+        color: $colgroup-1
+        transform: translateY(-50%)
+
+button.slick-prev.slick-arrow
+    background: white
+    height: 30px
+    width: 30px
+    top: -3px
+    left: -1px
+    z-index: 50
+    &::before
+        content: '\f104 '
+        font-family: 'fontawesome'
+        font-size: 40px
+        color: #0b322b !important
+        opacity: 1
+
+button.slick-next.slick-arrow
+    background: white
+    height: 30px
+    width: 30px
+    top: -3px
+    right: -1px
+    z-index: 50
+    &::before
+        content: '\f105'
+        font-family: 'fontawesome'
+        font-size: 40px
+        color: #0b322b !important
+        opacity: 1
+
+ul.slick-dots
+    position: absolute!important
+    top: -15px!important
+    left: 50%!important
+    transform: translateX(-50%)!important
+    padding: 0!important
+    margin: 0 auto!important
+    width: 100%!important
+    overflow: hidden!important
+
+.slick-dots li
+    width: 33.33% !important
+    margin: 0!important
+
+.slick-dots li button
+    position: relative
+    height: 25px
+    width: 25px
+    margin: 0 auto!important
+    display: block!important
+    border: 3px solid #0b322b!important
+    background: white!important
+    border-radius: 100%!important
+    &::before
+        content: ''!important
+        position: absolute!important
+        top: 50%!important
+        left: 50%!important
+        transform: translate(-50%, -50%)
+        width: 10px!important
+        height: 10px!important
+        display: block!important
+        border-radius: 100%!important
+        background: #0b322b
+        opacity: 0
+    &::after
+        content: ''!important
+        position: absolute!important
+        top: 50%!important
+        left: 50%!important
+        transform: translate(-50%, -50%)
+        height: 3px!important
+        width: 360px!important
+        background: #ddd!important
+        z-index: -100!important
+
+li#slick-slide10::before
+    content: ''!important
+    position: relative!important
+    top: 14px!important
+    right: 50%!important
+    height: 3px!important
+    background: #0b322b!important
+    display: block!important
+
+.drawed::before
+    content: ''!important
+    position: relative!important
+    top: 14px!important
+    right: 50%!important
+    height: 3px!important
+    background: #0b322b!important
+    display: block!important
+    z-index: -1!important
+
+/* Instafeed style
+
+#instafeed
+    display: flex
+    flex-wrap: wrap
+    .img-instagram
+        height: 190px
+        width: 11.11%
+        display: block
+        background-position: center
+        background-size: cover
+        border: 2px solid white
+        @media (max-width: 1440px)
+            height: 165px
+            width: 12.5%         
+        @media (max-width: 1200px)
+            height: 150px
+            width: 12.5%
+        @media (max-width: 1024px)
+            height: 140px
+            width: 16.66%
+        @media (max-width: 768px)
+            height: 100px
+        @media (max-width: 480px)
+            width: 25%
+        @media (max-width: 360px)
+            height: 90px
+            
+
+/* Breadcrumbs
+
+.breadcrumbs
+    line-height: 2.5em
+    font-weight: bold
+    font-size: 16px
+    text-transform: uppercase
+
+/* Measurements
+
+.measurements-icons
+    margin-bottom: 30px !important
+    .vc_column_container:nth-of-type(1)
+        &::before
+            display: none
+    .vc_column_container
+        position: relative
+        &::before
+            content: ''
+            position: absolute
+            top: 45%
+            transform: translate(0, -50%)
+            width: 1px
+            height: 50%
+            background-color: #e7e7e7     
+            @media (max-width: 767px)
+                top: 0
+                width: 50%
+                height: 1px
+                left: 50%
+                transform: translate(-50%, 0)                
+                bottom: 0
+
+    * p
+        margin: 0
+        padding: 0
+    * .wpb_text_column
+        padding: 0
+        margin: 0
+    img
+        margin: 0 auto
+    .num
+        color: white
+        margin: -3px auto 22px auto
+    p
+        color: $colgroup-1
+        font-size: 18px !important
+        font-weight: bold
+        text-transform: uppercase
+    p:nth-of-type(3)
+        padding-bottom: 50px
+
+.measurements-title-form
+    margin-bottom: 24px
+    p
+        font-weight: bold
+        font-size: 18px !important
+        text-transform: uppercase
+
+.measurements-form
+    margin-bottom: -118px !important
+    padding-bottom: 0 !important
+    @media (max-width: 640px)
+        margin-bottom: -30px !important
+    .row-form-text
+        position: relative
+        width: 100%
+        max-width: 400px
+        p
+            font-size: 17px !important
+            font-weight: normal
+            text-transform: capitalize
+            color: gray
+            margin-bottom: 13px
+        p:nth-of-type(2)
+            position: absolute
+            top: 0
+            right: 85px
+            @media (max-width: 480px)
+                right: 15%
+    .row-form
+        display: flex
+        align-items: center
+        margin-bottom: 20px
+        .input-form-row
+            display: flex
+            align-items: center
+            flex-wrap: wrap
+            input
+                margin: 0
+            input[type="number"]
+                position: relative
+                background-color: white
+                border: 2px solid #e7e7e7
+                width: 85px
+                color: $colgroup-1
+                font-size: 17px
+                padding: 21px 0 21px 17px
+                font-weight: bold
+            // Style spin start
+            input[type="number"]::-webkit-outer-spin-button,
+            input[type="number"]::-webkit-inner-spin-button
+                -webkit-appearance: none
+            input[type="number"]::-webkit-inner-spin-button
+                opacity: 1
+                height: 32px
+                width: 20px
+                background-image: url(../images/spinners.png)
+                background-repeat: no-repeat
+                background-position: center
+            // Style spin end 
+            input[type="text"]
+                background-color: white
+                border: 2px solid #e7e7e7
+                width: 85px
+                color: $colgroup-1
+                font-size: 17px
+                padding: 21px 0 21px 17px
+                font-weight: bold        
+            label
+                margin: 0 15px
+                padding: 0
+                font-size: 17px
+                font-weight: normal
+                text-transform: lowercase
+                color: gray
+                @media (max-width: 480px)
+                    margin: 0
+                    padding: 0 !important
+                    width: 85px
+                    text-align: center !important
+    .row-form-checkbox
+        display: flex
+        align-items: center
+        margin-bottom: 20px
+        background: #e7e7e7
+        width: 150px
+        padding: 4px
+        border-radius: 5px
+        input
+            margin: 0
+        input[type="checkbox"]
+            display: none
+        label
+            margin: 0
+            padding: 1.5px 10px
+            font-size: 13px
+            font-weight: bold
+            text-transform: uppercase
+            color: $colgroup-1
+        label:nth-of-type(1)
+            background: white
+            border-radius: 5px
+    .row-form-submit
+        display: inline-block
+        position: relative
+        &:hover
+                i
+                    color: white
+        input[type="submit"]
+            border: 2px solid black
+            display: inline-block
+            font-size: 17px !important
+            font-weight: bold
+            margin: 0
+            text-align: left
+            min-width: 200px
+            padding: 10px 20px 10px 20px
+            text-transform: uppercase
+            color: black
+            background: white            
+        i
+            padding: 0 !important
+            margin: 0 !important
+            position: absolute
+            top: 50%
+            transform: translateY(-50%)
+            transition: all .5s ease
+            right: 23px
+            font-size: 25px !important
+            color: black
+            &:hover
+                color: black
+
+
+/* My Room
+
+
+.vc_custom_1504640114466
+    padding-top: 35px !important
+
+.li.animate
+    margin: 0
+
+.text-logo-footer
+    font-size: 16px !important
+    font-weight: bold
+    margin-left: 5px

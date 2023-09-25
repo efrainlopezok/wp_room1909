@@ -1,0 +1,24 @@
+h1.page-title.shop_page_title
+  font-size: 30px
+  text-transform: uppercase
+  color: $colgroup-1
+
+.term-description p
+  position: relative
+  margin: 0 0 32px 0
+  font-size: 16.5px
+  text-align: justify
+  &:before, &:after
+    content: ''
+    position: absolute
+    display: block
+    width: 20px
+    height: 20px
+  &:before
+    top: 0
+    left: -30px
+    background: url(../images/dash-left.png) center no-repeat / contain
+  &:after
+    bottom: 0
+    right: -30px
+    background: url(../images/dash-right.png) center no-repeat / contain

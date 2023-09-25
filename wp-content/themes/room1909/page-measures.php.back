@@ -1,0 +1,322 @@
+<?php
+/*
+Template Name: Measures
+*/
+?>
+
+<?php get_header(); ?>
+
+<style type="text/css">
+    #content {
+        overflow: hidden;
+    }
+</style>
+
+    <div class="blank-page full-width-page">
+        
+        <div id="primary" class="content-area">
+           
+            <div id="content" class="site-content" role="main">
+                    
+                    <?php while ( have_posts() ) : the_post(); ?>
+                    <form method="post" action="/room/measurements" class="measurements-form">
+                        <div class="content-initial form-measures">
+                            <?php get_template_part( 'content', 'page' ); ?>
+                        <div class="full-width-page">
+                            <div class="row">
+                                <div class="row-fluid ">
+                                    <div class="vc_column_container">
+                                        <div class="vc_column-inner">
+                                            <div class="row-form-text">
+                                              <p>Height</p>
+                                              <p>Weight</p>
+                                            </div>
+                                            <div class="row-form">
+                                              <div class="input-form-row">
+                                                <input type="number" name="ft" id="measurements-height-m" placeholder="0" value="<?php echo get_the_author_meta('height_m', get_current_user_id()) ?>">
+                                                <label for="measurements-ft">ft.</label>
+                                              </div>
+                                              <div class="input-form-row">
+                                                <input type="number" name="in" id="measurements-heightin-m" placeholder="0" value="<?php echo get_the_author_meta('heightIn', get_current_user_id()) ?>">
+                                                <label for="measurements-in">in.</label>
+                                              </div>
+                                              <div class="input-form-row">
+                                                <input type="text" name="lbs" id="measurements-weight-m" placeholder="0" value="<?php echo get_the_author_meta('weight_m', get_current_user_id()) ?>">
+                                                <label for="measurements-lbs">lbs.</label>
+                                              </div>
+                                            </div>
+                                            <div class="row-form-checkbox">
+                                              <label for="imperial">Imperial</label>
+                                              <input type="checkbox" name="imperial" id="imperial">
+                                              <label for="metric">Metric</label>
+                                              <input type="checkbox" name="metric" id="metric">
+                                            </div>
+                                            <div class="row-form-submit">
+                                              <input type="button" id="submit_m1" class="button_m" name="submit" value="Save & Continue">
+                                              <i class="fa fa-angle-right" aria-hidden="true"></i>
+                                            </div>
+
+                                            <div class="clear"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        </div>
+                        <div class="clear"></div>
+                        <div class="full-width-page">
+                            <div class="row">
+                                <div class="row-fluid content-second" style="opacity:0; display: none; position: absolute;">
+                                    <div class="vc_column_container">
+                                        <div class="vc_column-inner">
+                                            <?php
+                                                $rows_pre = get_field('measures');
+                                                $measures_next = array();
+                                                if($rows_pre) {
+                                                    foreach($rows_pre as $row) {
+                                                        $measures_next[] = $row['short_title'];
+                                                    }
+                                                }
+
+
+                                                $rows = get_field('measures');
+                                                $measures_user = array('neck_m', 'shoulder_m', 'armlenght_m', 'chest_m', 'bicep_m', 'stomach_m', 'waist_m', 'wrist_m', 'seat_m', 'jacketlength_m', 'urise_m', 'thigh_m', 'pantslength_m');
+
+                                                if($rows) {
+                                                    $step = 2;
+                                                    $steps_measures = "";
+
+                                                    $steps_measures .= '<li class="customize-title active step-1"><h4>Height & Weight</h4><span>'.get_the_author_meta('height_m' , get_current_user_id()).'"'.get_the_author_meta('heightIn', get_current_user_id()).'" and '.get_the_author_meta('weight_m', get_current_user_id()).' lbs</span></li>';
+
+                                                    echo '<div class="steps">';
+                                                    $previusTitle = "";
+                                                    foreach($rows as $row) {
+                                                        echo '<div class="step-item">';
+                                                            echo '<div class="title-step">';
+                                                            echo '<h3>'.$row['title'].'</h3>';
+                                                            echo '<span>STEP '.$step.' OF 14</span>';
+                                                            echo '</div>';
+                                                            echo '<div class="content-step">';
+                                                            echo '<div class="video">';
+                                                                if($row['type_video'] == "Youtube") {
+                                                                    echo '<iframe id="video'.$step.'" width="560" height="315" src="https://www.youtube.com/embed/'.$row['video'].'?showinfo=0&rel=0" frameborder="0" allowfullscreen></iframe>';
+
+                                                                }
+                                                                else {
+                                                                    if($row['type_video'] == "Vimeo") {
+
+                                                                        //echo '<iframe src="https://player.vimeo.com/video/'.$row['video'].'?autoplay=1&loop=1&autopause=0" width="100%" height="360" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>';
+                                                                    }
+                                                                    else {
+
+                                                                    }                                                
+                                                                }
+                                                                echo '<div class="play-video"></div>';
+                                                            echo '</div>';
+
+                                                            echo '<h4>INSTRUCTIONS</h4>';
+                                                            echo '<div class="step-measure-box"><input type="text" id="'.$measures_user[$step - 2].'" name="'.$measures_user[$step - 2].'" value="'.get_the_author_meta($measures_user[$step - 2], get_current_user_id()).'"> inches</div>';
+                                                            echo $row['instructions'];
+
+                                                                echo '<div class="row-form-submit">';
+                                                                    if($step == 2) {
+                                                                        echo '<input type="button" class="prev-step-first button_m" value="Prev (Height & Weight)">';
+                                                                        $previusTitle = $row['short_title'];
+                                                                    }
+                                                                    else {
+                                                                        echo '<input type="button" class="prev-step button_m" value="Previus ('.$previusTitle.')">';
+                                                                        $previusTitle = $row['short_title'];
+                                                                    }
+                                                                    echo '<span class="space-button"> </span>';
+                                                                    if($step < 14) {
+                                                                        echo '<input type="button" class="next-step button_m" value="Next ('.$measures_next[$step - 1].')">'; 
+                                                                    }
+                                                                    else {
+                                                                        echo '<input type="button" class="complete-measurements button_m" value="Complete Measurements">';
+                                                                    }
+                                                                echo '<div class="clear"></div>
+                                                                    </div>';
+                                                            echo '</div>';
+                                                        echo '</div>';
+
+                                                        if(get_the_author_meta($measures_user[$step - 2], get_current_user_id())) {
+                                                            $steps_measures .= '<li class="customize-title active"><h4 stepIndex="'.$step.'">'.$row['short_title'].'</h4><span>'.get_the_author_meta($measures_user[$step - 2], get_current_user_id()).' inches</span></li>';
+                                                        }
+                                                        else {
+                                                            $steps_measures .= '<li class="customize-title"><h4 stepIndex="'.$step.'">'.$row['short_title'].'</h4><span>Not Selected</span></li>';
+                                                        }
+                                                        
+                                                        $step++;
+                                                    }
+                                                    echo '</div>';
+                                                    echo '<div class="steps-completed"><h5>Enter measurements</h5><h6>Overview</h6>';
+                                                    echo '<ul>'.$steps_measures.'</ul>';
+                                                    echo '<div>';
+                                                }
+                                            ?>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                    <div class="clear"></div>
+                    <?php endwhile; // end of the loop. ?>
+                <div class="clear"></div>
+                <footer class="entry-meta"></footer>
+            </div><!-- #content -->           
+            
+        </div><!-- #primary -->
+        
+    </div><!-- .boxed-page -->
+    <script src="//code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+
+<script type="text/javascript">
+    jQuery(document).ready(function($) {
+
+
+        $('.play-video').click(function() {
+            var iframeVideo = $(this).parent('.video').find('iframe');
+            iframeVideo.attr('src', iframeVideo.attr('src')+'&autoplay=1')
+            $(this).css({width:0, height: 0});
+        });
+
+
+
+        var slickStep = $('.steps');
+        
+        $('.customize-title').click(function() {
+            var stepIndex = $(this).index();
+            if(stepIndex == 0) {
+               $('.prev-step-first').click();
+            }
+            else 
+                slickStep.slick("slickGoTo",(stepIndex-1));
+        });
+
+        $('.prev-step-first').click(function(e) {
+            e.preventDefault();
+            $('.content-second').css({'display':'none', 'position':'absolute'});
+            $('.content-second').animate({
+                opacity: 0,
+            }, 300);
+
+            $('.content-initial').show('slide', {direction: 'down'}, 300);
+            slickStep.slick('unslick');
+        });
+
+
+        $('.next-step').click(function(e) {
+            e.preventDefault();
+            slickStep.slick("slickNext");
+        });
+
+        $('.prev-step').click(function(e) {
+            e.preventDefault();
+            slickStep.slick("slickPrev");
+        });
+        
+        $('#submit_m1').click(function(e) {
+           
+            
+            e.preventDefault();
+            var height_m = $('#measurements-height-m').val();
+            var heightin_m = $('#measurements-heightin-m').val();
+            var weight_m = $('#measurements-weight-m').val();
+
+
+
+            $('.content-initial').hide('slide', {direction: 'up'}, 300);
+                    $('.content-second').css({'display':'block', 'position':'relative'});
+                    slickStep.slick({arrows: false, swipe: false, accessibility:true, slickGoTo:0, infinite: false});
+                    $('.content-second').animate({
+                        opacity: 1,
+                    }, 1300);
+                    $('.step-1 span').html(height_m + '\"' + heightin_m + '\"' + " and " + weight_m + " lbs");
+
+
+
+            $.ajax({
+                url: "<?php echo get_site_url(); ?>/wp-admin/admin-ajax.php",
+                method: 'get',
+                data: {
+                    'action':'update_user_measures',
+                    'height_m' : height_m,
+                    'heightIn' : heightin_m,
+                    'weight_m' : weight_m
+                },
+                success:function(data) {
+                    $('.content-initial').hide('slide', {direction: 'up'}, 300);
+                    $('.content-second').css({'display':'block', 'position':'relative'});
+                    slickStep.slick({arrows: false, swipe: false, accessibility:true, slickGoTo:0, infinite: false});
+                    $('.content-second').animate({
+                        opacity: 1,
+                    }, 1300);
+                    $('.step-1 span').html(height_m + '\"' + heightin_m + '\"' + " and " + weight_m + " lbs");
+                    console.log(data);
+                },
+                error: function(errorThrown){
+                    console.log(errorThrown);
+                }
+            });
+        });
+
+        $('.complete-measurements').click(function(e) {
+            e.preventDefault();
+
+            var neck_m          = $('#neck_m').val();
+            var shoulder_m      = $('#shoulder_m').val();
+            var armlenght_m     = $('#armlenght_m').val();
+            var chest_m         = $('#chest_m').val();
+            var bicep_m         = $('#bicep_m').val();
+            var stomach_m       = $('#stomach_m').val();
+            var waist_m         = $('#waist_m').val();
+            var wrist_m         = $('#wrist_m').val();
+            var seat_m          = $('#seat_m').val();
+            var jacketlength_m  = $('#jacketlength_m').val();
+            var urise_m         = $('#urise_m').val();
+            var thigh_m         = $('#thigh_m').val();
+            var pantslength_m   = $('#pantslength_m').val();
+
+            $.ajax({
+                url: "<?php echo get_site_url(); ?>/wp-admin/admin-ajax.php",
+                method: 'get',
+                data: {
+                    'action'         :'update_user_measures_second_part',
+                    'neck_m'         : neck_m,
+                    'shoulder_m'     : shoulder_m,
+                    'armlenght_m'    : armlenght_m,
+                    'chest_m'        : chest_m,
+                    'bicep_m'        : bicep_m,
+                    'stomach_m'      : stomach_m,
+                    'waist_m'        : waist_m,
+                    'wrist_m'        : wrist_m,
+                    'seat_m'         : seat_m,
+                    'jacketlength_m' : jacketlength_m,
+                    'urise_m'        : urise_m,
+                    'thigh_m'        : thigh_m,
+                    'pantslength_m'  : pantslength_m
+                },
+                success:function(data) {
+                    /*$('.content-initial').hide('slide', {direction: 'up'}, 300);
+                    $('.content-second').css({'display':'block', 'position':'relative'});
+                    slickStep.slick({arrows: false, swipe: false, accessibility:true, slickGoTo:0, infinite: false});
+                    $('.content-second').animate({
+                        opacity: 1,
+                    }, 1300);
+                    $('.step-1 span').html(height_m + '\"' + heightin_m + '\"' + " and " + weight_m + " lbs");*/
+                    console.log(data);
+                    location.reload();
+                },
+                error: function(errorThrown){
+                    console.log(errorThrown);
+                }
+            });
+
+        });
+    });
+
+</script>
+
+
+<?php get_footer(); ?>
